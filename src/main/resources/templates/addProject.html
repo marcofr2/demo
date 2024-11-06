@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Project</title>
+    <!-- Bootstrap and FontAwesome -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .btn-return {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Return to All Projects Button -->
+    <a href="/welcome" class="btn btn-primary btn-return">
+        <i class="fas fa-arrow-left"></i> Return to Welcome Page
+    </a>
+
+    <h2>Add New Project</h2>
+
+    <form action="/projects/save" method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Project Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Project Name" required>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" placeholder="Enter Description" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save"></i> Save Project
+        </button>
+    </form>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
